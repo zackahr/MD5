@@ -31,7 +31,7 @@ $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
-	rm -rf $(OBJS_DIR)
+	rm -f $(OBJS)
 
 fclean: clean
 	rm -f $(NAME)
