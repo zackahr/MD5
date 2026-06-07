@@ -19,4 +19,7 @@ int	dispatch(int argc, char **argv);
 int	cmd_md5(int argc, char **argv);
 int	cmd_sha256(int argc, char **argv);
 
+int	usage(void);
+int	unknown_command(const char *name);
+
 #endif
