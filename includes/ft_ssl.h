@@ -14,6 +14,29 @@ typedef struct s_command
 	int			(*run)(int argc, char **argv);
 }	t_command;
 
+enum e_target_kind
+{
+	TGT_STDIN,
+	TGT_STRING,
+	TGT_FILE,
+};
+
+typedef struct s_target
+{
+	int			kind;
+	const char	*value;
+}	t_target;
+
+typedef struct s_args
+{
+	t_flags		flags;
+	t_target	*targets;
+	int			n_targets;
+}	t_args;
+
+int	parse_args(int argc, char **argv, t_args *out);
+void	free_args(t_args *args);
+
 int	dispatch(int argc, char **argv);
 
 int	cmd_md5(int argc, char **argv);
